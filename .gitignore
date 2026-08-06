@@ -1,0 +1,15 @@
+# macOS
+.DS_Store
+
+# 本地工作目录（临时脚本 / 中间产物）
+.comate/
+
+# 内部发布记录（popo）
+.popo.json
+
+# 编辑器 / 工作区
+*.code-workspace
+
+# 依赖与构建产物（本项目为零依赖静态站，保留以备后续）
+node_modules/
+dist/
