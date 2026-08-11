@@ -152,7 +152,7 @@
 ## 十、上线与协作说明
 
 - 本地预览：`python3 -m http.server 4173` 后访问 `http://localhost:4173/`
-- 私密预览：`https://lijiefu111.github.io/my-wardrobe/`（GitHub Pages 公开预览）
+- 私密预览：`https://lijiefu111.github.io/Baida/`（GitHub Pages 公开预览）
 - 迭代节奏：先做首页衣橱、然后穿搭 → 日记 → 诊断。每次变更后同步更新本文档，避免长上下文刷新遗忘。
 
 ## 十一、v5 迭代实录（本轮已实现）
@@ -187,7 +187,7 @@
 - 旧的 `cat-icon-*-v1` 与 `dada-home-cutout-v2` 因棋盘格问题弃用。
 
 ### v5 线上
-- `https://lijiefu111.github.io/my-wardrobe/`（GitHub Pages 公开预览）
+- `https://lijiefu111.github.io/Baida/`（GitHub Pages 公开预览）
 
 ## 十二、v6 迭代实录（本轮已实现）
 
@@ -212,7 +212,7 @@
 - 商业化边界仍遵守 `PRODUCT_DESIGN.md`：推荐以「补齐衣橱缺口、提升利用率」为由，不做无脑种草，预算是用户主动给的约束。
 
 ### v6 线上
-- `https://lijiefu111.github.io/my-wardrobe/`（GitHub Pages 公开预览）
+- `https://lijiefu111.github.io/Baida/`（GitHub Pages 公开预览）
 
 ## 十三、v7 迭代实录（本轮已实现）
 
@@ -243,7 +243,7 @@
 6. **数据闭环**：真实穿着反馈回流校准画像——即北极星「采用推荐并真实穿着的次数」。
 
 ### v7 线上
-- `https://lijiefu111.github.io/my-wardrobe/`（GitHub Pages 公开预览）
+- `https://lijiefu111.github.io/Baida/`（GitHub Pages 公开预览）
 
 ## 十四、v8 迭代实录（围绕真实画像的故事线优化）
 
@@ -264,7 +264,7 @@
 衣橱（他真实拥有的 24 件）→ 选场合/单品 → AI 出 3 套方案 → 每套可数字人试穿看上身 → 穿这套写进日记（对应单品穿着 +1）→ 日记沉淀近 30 天画像（最常穿、高频场景）→ 购物页按画像 + 预算推荐缺口单品，并能在社区看别人上身、找同款。
 
 ### v8 线上
-- `https://lijiefu111.github.io/my-wardrobe/`（GitHub Pages 公开预览）
+- `https://lijiefu111.github.io/Baida/`（GitHub Pages 公开预览）
 
 ## 十五、简历用简介（约 300 字）
 
