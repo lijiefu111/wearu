@@ -1,0 +1,88 @@
+/* WEARU v015 */
+
+/* ---------- 1. inline generation ---------- */
+.inline-loading { display: grid; justify-items: center; gap: 8px; padding: 28px 0 22px; border: 1.5px dashed #dfd2c3; border-radius: 18px; }
+.inline-loading small { color: #70685f; font-size: 12px; }
+.result-meta { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; margin-bottom: 10px; }
+.result-meta .regen { margin-left: auto; min-height: 30px; padding: 0 12px; border: 1px solid #dfd2c3; border-radius: 999px; background: transparent; font: inherit; font-size: 12px; color: #70685f; cursor: pointer; }
+
+/* ---------- 3. journal: cover + full pages ---------- */
+.jf-book { position: relative; height: 640px; margin: 6px 0 8px 14px; perspective: 1800px; }
+.jf-rings { position: absolute; left: -14px; top: 26px; bottom: 26px; z-index: 6; display: flex; flex-direction: column; justify-content: space-between; pointer-events: none; }
+.jf-rings i { width: 26px; height: 10px; border-radius: 6px; background: linear-gradient(#f1ede8, #a59f97); box-shadow: 0 1px 2px rgba(0,0,0,.35); }
+.jf-book.is-closed .jf-rings { opacity: 0; }
+.jf-stack { position: absolute; inset: 0; }
+.jf-page { position: absolute; inset: 0; overflow: hidden; padding: 18px 18px 14px 26px; border-radius: 4px 14px 14px 4px; background: #fdf8ef repeating-linear-gradient(to bottom, transparent 0 29px, #efe3d0 29px 30px); box-shadow: 0 16px 34px rgba(46,44,42,.18), inset 8px 0 12px -10px rgba(0,0,0,.3); color: #2b2622; }
+.jf-blank { display: grid; place-items: center; align-content: center; gap: 6px; text-align: center; color: #a89784; }
+.jf-blank .doodle { position: static; width: 60px; }
+.jf-head { display: flex; justify-content: space-between; align-items: flex-start; }
+.jf-stamp { padding: 4px 9px; border: 2px solid #c4644a; border-radius: 5px; color: #c4644a; font-family: var(--hand); font-size: 14px; transform: rotate(var(--r)); background: rgba(253,248,239,.75); }
+.jf-mid { position: relative; display: grid; grid-template-columns: 1.35fr 1fr; gap: 6px; align-items: start; margin-top: 8px; }
+.jf-collage { position: relative; height: 250px; }
+.jf-polaroid { width: 100%; margin: 18px 0 0; }
+.jf-page .sb-title { margin-top: 10px; font-size: 22px; }
+.jf-page .sb-feels { gap: 2px 8px; }
+.jf-page .sb-feel { font-size: 15px; }
+.jf-foot { position: absolute; left: 26px; right: 18px; bottom: 12px; display: flex; justify-content: space-between; align-items: center; }
+.jf-foot select { max-width: 90px; min-height: 28px; border: 1px dashed #c9b9a8; border-radius: 6px; background: transparent; font-family: var(--hand); font-size: 13px; }
+.jf-page .doodle { right: 18px; top: 92px; left: auto; bottom: auto; }
+
+/* cover */
+.jf-cover { position: absolute; inset: 0; display: block; width: 100%; padding: 0; border: 0; border-radius: 4px 14px 14px 4px; overflow: hidden; cursor: pointer; background: #cfc6ba; box-shadow: 0 18px 38px rgba(46,44,42,.25); }
+.jf-cover-art { position: absolute; inset: 0; background: url(journal/cover.webp) center / 100% 100%; }
+.jf-cover-art::after { content: ""; position: absolute; inset: 0; background: var(--tint, transparent); mix-blend-mode: multiply; opacity: .38; }
+.jf-label { position: absolute; left: 25.2%; width: 51.8%; top: 15.6%; height: 21.1%; border-radius: 12px; background: rgba(250,246,238,.94); box-shadow: 0 1px 2px rgba(0,0,0,.08); display: grid; place-items: center; align-content: center; gap: 4px; text-align: center; z-index: 1; }
+.jf-label b { font-size: 21px; font-weight: 400; color: #2b2622; line-height: 1.25; }
+.jf-label small { font-size: 12px; color: #7a6e62; }
+.jf-cover-u { position: absolute; right: 20%; bottom: 14%; z-index: 1; transform: rotate(-6deg); }
+.jf-hint { position: absolute; left: 0; right: 0; bottom: 5%; z-index: 1; text-align: center; color: #fdf8ef; font-size: 15px; text-shadow: 0 1px 3px rgba(0,0,0,.35); animation: hintNudge 1.8s ease-in-out infinite; }
+@keyframes hintNudge { 50% { transform: translateX(6px); } }
+.jf-endpaper { position: absolute; inset: 0; border-radius: 14px 4px 4px 14px; background: url(journal/endpaper.webp) center / cover; box-shadow: inset -8px 0 12px -10px rgba(0,0,0,.3); }
+.jf-back { position: absolute; inset: 0; border-radius: 14px 4px 4px 14px; background: #f7f0e4 repeating-linear-gradient(to bottom, transparent 0 29px, #efe3d0 29px 30px); }
+
+/* leaves */
+.jf-leaf { position: absolute; inset: 0; z-index: 5; transform-style: preserve-3d; transform-origin: left center; transition: transform .76s cubic-bezier(.45,.05,.3,1); }
+.jf-leaf .leaf-face { position: absolute; inset: 0; backface-visibility: hidden; }
+.jf-leaf .leaf-face.back { transform: rotateY(180deg); }
+.jf-leaf .leaf-face .jf-page, .jf-leaf .leaf-face .jf-cover { position: absolute; inset: 0; }
+.jf-leaf.fwd.go { transform: rotateY(-178deg); }
+.jf-leaf.back-in { transform: rotateY(-178deg); }
+.jf-leaf.back-in.go { transform: rotateY(0deg); }
+.cover-leaf { transition-duration: .88s; }
+.cover-leaf.go { transform: rotateY(-178deg); }
+.cover-leaf.closing { transform: rotateY(-178deg); }
+.cover-leaf.closing.go { transform: rotateY(0deg); }
+.jf-leaf::after { content: ""; position: absolute; inset: 0; pointer-events: none; background: linear-gradient(90deg, rgba(0,0,0,.22), rgba(0,0,0,0) 60%); opacity: 0; animation: leafShade .76s ease; }
+.jf-close { font-family: var(--hand); }
+.jf-tip { text-align: center; color: #8b7a6a; margin: 4px 0 24px; }
+
+/* ---------- 5. themes (override main surfaces) ---------- */
+.theme-row { margin: 10px 0 4px; padding: 12px 14px; border: 1px solid var(--t-line, #dfd2c3); border-radius: 14px; background: var(--t-card, #fffaf4); }
+.theme-row b { display: block; font-size: 13px; } .theme-row small { display: block; margin-top: 2px; color: #70685f; font-size: 11px; }
+.theme-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+.theme-chips button { display: flex; align-items: center; gap: 6px; min-height: 34px; padding: 0 12px; border: 1px solid #dfd2c3; border-radius: 999px; background: #fff; font: inherit; font-size: 12px; cursor: pointer; }
+.theme-chips button i { width: 14px; height: 14px; border-radius: 50%; border: 1px solid rgba(0,0,0,.1); }
+.theme-chips [data-t=warm] i { background: linear-gradient(135deg,#F6EFE6 50%,#C4644A 50%); }
+.theme-chips [data-t=cloud] i { background: linear-gradient(135deg,#FAFAF8 50%,#E07A5F 50%); }
+.theme-chips [data-t=mist] i { background: linear-gradient(135deg,#F3F6F9 50%,#4C6EF5 50%); }
+.theme-chips [data-t=blush] i { background: linear-gradient(135deg,#FBF6F4 50%,#D9777F 50%); }
+.theme-chips button[aria-pressed=true] { border-color: #2e2c2a; font-weight: 600; }
+
+html[data-theme=cloud] { --t-bg:#FAFAF8; --t-card:#FFFFFF; --t-soft:#F2F1EE; --t-line:#E6E4E0; --t-accent:#E07A5F; --t-accent-ink:#B4533A; --t-dark:#1F1F1F; --t-body:#ECEBE8; }
+html[data-theme=mist]  { --t-bg:#F4F6F9; --t-card:#FFFFFF; --t-soft:#E8EDF3; --t-line:#DCE3EC; --t-accent:#4C6EF5; --t-accent-ink:#3451C7; --t-dark:#1E2A3B; --t-body:#E3E8EF; }
+html[data-theme=blush] { --t-bg:#FBF6F4; --t-card:#FFFFFF; --t-soft:#F6E9E6; --t-line:#EED9D4; --t-accent:#D9777F; --t-accent-ink:#B4545D; --t-dark:#3A2E2E; --t-body:#F1E4E0; }
+html:not([data-theme=warm]) body { background: var(--t-body) !important; }
+html:not([data-theme=warm]) :is(.app-shell, .v3, .app-page, .wardrobe-page, .result-page, .diary-page, .profile-sheet, .similar-sheet, .feed-sheet, .tryon-sheet, .garment-modal, .import-sheet) { background: var(--t-bg) !important; --v3-bg: var(--t-bg); }
+html:not([data-theme=warm]) :is(.garment-tile, .rec-card, .persona, .closet-control, .browse-controls select, .profile-sheet select, .wardrobe-pick-btn, .scene-input, .scene-pills button, .book-shelf button, .date-pick, .book-nav button, .m-card, .outfit-canvas, .gender-row, .weather-locate, .dup-warning, .budget-input) { background-color: var(--t-card) !important; border-color: var(--t-line) !important; }
+html:not([data-theme=warm]) :is(.weather-banner, .u-says, .rec-product, .category-browser .garment-tile > img, .companion-panel, .diagnosis-overview, .top-row img, .idle-row button, .pending-card) { background-color: var(--t-soft) !important; border-color: var(--t-line) !important; }
+html:not([data-theme=warm]) .app-nav { background: color-mix(in srgb, var(--t-card) 94%, transparent) !important; border-color: var(--t-line) !important; }
+html:not([data-theme=warm]) :is(.coral-button, .today-go, .now, .date-chips button.on) { background: var(--t-accent) !important; border-color: var(--t-accent) !important; color: #fff !important; }
+html:not([data-theme=warm]) :is(.scene-pills button.selected, .chip.selected, .pick-card.selected) { border-color: var(--t-accent) !important; color: var(--t-accent-ink) !important; background: color-mix(in srgb, var(--t-accent) 12%, white) !important; }
+html:not([data-theme=warm]) .app-nav button.active { color: var(--t-accent-ink) !important; }
+html:not([data-theme=warm]) .app-nav button.active svg { background: color-mix(in srgb, var(--t-accent) 16%, white) !important; }
+html:not([data-theme=warm]) :is(.today-hero, .dark-button, .book-shelf button[aria-selected=true], .jf-note-btn) { background: var(--t-dark) !important; border-color: var(--t-dark) !important; }
+html:not([data-theme=warm]) .flow-step.current::before { background: var(--t-accent); border-color: var(--t-accent); }
+html:not([data-theme=warm]) :is(.ghost-button, .rec-find) { border-color: var(--t-accent) !important; color: var(--t-accent-ink) !important; }
+html:not([data-theme=warm]) :is(.gap-tag, .rec-gap) { background: color-mix(in srgb, var(--t-accent) 14%, white) !important; color: var(--t-accent-ink) !important; }
+html:not([data-theme=warm]) .top-row i { background: linear-gradient(90deg, var(--t-accent) var(--w), var(--t-soft) var(--w)) !important; }
+@media (min-width: 600px) { html:not([data-theme=warm]) body { background: radial-gradient(circle at 50% 30%, var(--t-bg), var(--t-body)) !important; } }

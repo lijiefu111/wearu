@@ -1,0 +1,36 @@
+/* WEARU v017 · 手账社区 */
+.journal-mode { margin-bottom: 14px; }
+.share-btn { min-height: 28px; padding: 0 10px; border: 1px dashed #c4644a; border-radius: 999px; background: transparent; color: #a64d36; font-size: 13px; cursor: pointer; }
+.share-btn.on { border-style: solid; background: rgba(196,100,74,.1); }
+.jf-foot { gap: 8px; }
+
+.cj-intro { margin: 0 0 14px; color: #8b7a6a; font-size: 15px; }
+.cj-masonry { columns: 2; column-gap: 12px; }
+.cj-card { display: inline-block; width: 100%; margin: 0 0 14px; padding: 10px 10px 12px; border: 0; border-radius: 4px 10px 10px 4px; text-align: left; font: inherit; cursor: pointer; break-inside: avoid; background: #fdf8ef repeating-linear-gradient(to bottom, transparent 0 21px, #efe3d0 21px 22px); box-shadow: 0 6px 16px rgba(46,44,42,.12), inset 5px 0 8px -6px rgba(0,0,0,.25); transform: rotate(var(--r)); transition: transform .2s ease; }
+.cj-card:hover { transform: rotate(0deg) translateY(-2px); }
+.cj-top { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 6px; }
+.cj-top b { font-size: 18px; font-weight: 700; color: #2b2622; }
+.cj-top em { font-style: normal; padding: 1px 6px; border: 1.5px solid #c4644a; border-radius: 4px; color: #c4644a; font-size: 12px; transform: rotate(4deg); }
+.cj-photo { position: relative; display: block; padding: 5px 5px 14px; background: #fff; box-shadow: 0 3px 8px rgba(0,0,0,.14); transform: rotate(-1.5deg); }
+.cj-photo img { display: block; width: 100%; height: auto; }
+.cj-photo .outfit-canvas { aspect-ratio: 4/5; }
+.cj-photo .tape { top: -7px; left: 50%; width: 40px; height: 13px; transform: translateX(-50%) rotate(-6deg); }
+.cj-cap { display: block; margin: 8px 2px 6px; font-size: 14px; line-height: 1.5; color: #2f4f7a; }
+.cj-meta { display: flex; align-items: center; gap: 6px; font-size: 11px; color: #70685f; }
+.cj-meta i { width: 18px; height: 18px; display: grid; place-items: center; border-radius: 50%; background: #2e2c2a; color: #fff; font-style: normal; font-size: 10px; }
+.cj-meta small { padding: 0 6px; border-radius: 999px; background: rgba(196,100,74,.12); color: #a64d36; font-size: 10px; }
+.cj-meta em { margin-left: auto; font-style: normal; }
+
+.cj-sheet { width: min(100%, 480px); max-height: 92dvh; overflow-y: auto; padding: 10px 16px calc(18px + env(safe-area-inset-bottom)); border-radius: 20px 20px 0 0; background: var(--t-bg, #F6EFE6); animation: sheet .28s ease; }
+.cj-page { position: relative; padding: 16px 16px 18px 22px; border-radius: 4px 12px 12px 4px; background: #fdf8ef repeating-linear-gradient(to bottom, transparent 0 29px, #efe3d0 29px 30px); box-shadow: 0 10px 24px rgba(46,44,42,.14), inset 8px 0 12px -10px rgba(0,0,0,.3); color: #2b2622; }
+.cj-photo.big { width: 78%; margin: 14px auto 6px; padding: 8px 8px 26px; transform: rotate(var(--r)); }
+.cj-says { margin: 10px 0 6px; font-size: 17px; line-height: 1.6; color: #2f4f7a; }
+.cj-tags { display: flex; flex-wrap: wrap; gap: 8px 10px; }
+.cj-tag { display: flex; align-items: center; gap: 6px; padding: 5px 10px 5px 6px; border: 1.5px solid #2b2622; border-radius: 10px 14px 12px 8px; background: #fffdf8; color: #2b2622; font-size: 14px; transform: rotate(var(--r)); cursor: pointer; box-shadow: 2px 2px 0 rgba(43,38,34,.15); }
+.cj-tag img { width: 30px; height: 30px; object-fit: contain; }
+.cj-tag b { font-size: 12px; font-weight: 400; color: #c4644a; }
+.cj-actions { display: grid; grid-template-columns: 1fr 1.6fr; gap: 10px; margin-top: 14px; }
+.cj-actions .ghost-button, .cj-actions .coral-button { margin: 0; }
+
+.cj-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 4px; background: #faf6ef; }
+.cj-grid img { width: 100%; aspect-ratio: 1; object-fit: contain; padding: 4px; box-sizing: border-box; }

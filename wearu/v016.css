@@ -1,0 +1,58 @@
+/* WEARU v016 */
+
+/* journal: stable layout */
+.date-jump.ghost { visibility: hidden; }
+.ghost-nav { justify-content: center; min-height: 40px; }
+.ghost-nav .jf-tip { margin: 0; font-size: 15px; color: #8b7a6a; }
+.jf-rings { transition: opacity .4s ease .5s; }
+.to-insight { display: block; margin: 8px auto 28px; padding: 10px 16px; border: 1px dashed var(--t-line, #d6c8b6); border-radius: 999px; background: transparent; color: #8b654c; font-size: 15px; cursor: pointer; }
+
+/* 穿搭 mode switch */
+.mode-switch { display: inline-flex; gap: 4px; margin: 2px 0 18px; padding: 4px; border-radius: 999px; background: var(--t-soft, #EDE5DA); }
+.mode-switch button { min-height: 34px; padding: 0 16px; border: 0; border-radius: 999px; background: transparent; color: #70685f; font: inherit; font-size: 13px; cursor: pointer; }
+.mode-switch button[aria-selected="true"] { background: var(--t-card, #fffaf4); color: #2b2622; font-weight: 600; box-shadow: 0 1px 3px rgba(0,0,0,.08); }
+
+/* 懂你 */
+.insight-page .u-title { margin-top: 18px; }
+.diag-head { display: flex; gap: 14px; align-items: center; margin: 34px 0 14px; }
+.diag-head h2 { margin: 0 0 4px; font-size: 26px; font-weight: 400; }
+.diag-head p { margin: 0; font-size: 13px; line-height: 1.6; color: #70685f; }
+.diag-score { position: relative; width: 72px; height: 72px; flex: none; }
+.diag-score svg { width: 100%; height: 100%; transform: rotate(-90deg); }
+.diag-score circle { fill: none; stroke: var(--t-soft, #EDE5DA); stroke-width: 7; }
+.diag-score .arc { stroke: var(--t-accent, #C4644A); stroke-linecap: round; stroke-dasharray: calc(var(--p) * 1.696) 169.6; transition: stroke-dasharray .6s ease; }
+.diag-score b { position: absolute; inset: 0; display: grid; place-items: center; font-size: 17px; }
+.gap-list.v16 { display: grid; gap: 12px; margin-bottom: 18px; }
+.gp-card { border: 1px solid var(--t-line, #dfd2c3); border-radius: 18px; background: var(--t-card, #fffaf4); overflow: hidden; }
+.gp-card.open { box-shadow: 0 8px 24px rgba(46,44,42,.08); }
+.gp-head { display: flex; gap: 12px; align-items: center; width: 100%; padding: 14px 16px; border: 0; background: transparent; text-align: left; font: inherit; cursor: pointer; }
+.gp-no { width: 30px; height: 30px; flex: none; display: grid; place-items: center; border-radius: 50%; background: var(--t-accent, #C4644A); color: #fff; font-weight: 700; font-size: 14px; }
+.gp-q b { display: block; font-size: 14px; line-height: 1.45; color: #2b2622; }
+.gp-q small { display: block; margin-top: 3px; font-size: 12px; color: var(--t-accent-ink, #a64d36); }
+.gp-flow { padding: 2px 16px 6px 46px; }
+.gp-flow .flow-step { padding-bottom: 20px; }
+.gp-ev { display: flex; gap: 6px; flex-wrap: wrap; }
+.gp-ev img { width: 52px; height: 52px; object-fit: contain; padding: 4px; border-radius: 10px; background: var(--t-soft, #EDE5DA); box-sizing: border-box; }
+.gp-note { margin: 8px 0 0; font-size: 12px; line-height: 1.6; color: #70685f; }
+.gp-flow .rec-pair figcaption { font-size: 10px; }
+.tier-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 6px; }
+.tier-row button { display: grid; gap: 2px; padding: 9px 6px; border: 1px solid var(--t-line, #dfd2c3); border-radius: 12px; background: transparent; font: inherit; text-align: center; cursor: pointer; }
+.tier-row small { font-size: 10px; color: #8b7a6a; }
+.tier-row b { font-size: 13px; color: #2b2622; }
+.tier-row em { font-style: normal; font-size: 11px; color: #70685f; }
+.tier-row button.on { border-color: var(--t-accent, #C4644A); background: color-mix(in srgb, var(--t-accent, #C4644A) 10%, white); }
+.tier-row button.on b { color: var(--t-accent-ink, #a64d36); }
+.gp-flow .rec-actions { display: grid; grid-template-columns: 1fr 1.3fr; gap: 8px; }
+.gp-flow .rec-find:disabled { opacity: .5; cursor: not-allowed; }
+.ad-note { margin: 8px 0 0; font-size: 10px; color: #a89784; }
+
+/* rail only: content keeps normal colours in every state */
+.flow-step.todo > :not(.flow-label) { opacity: 1 !important; }
+.flow-step.todo .flow-label b, .flow-step.done .flow-label b, .flow-step.optional .flow-label b { color: #2b2622 !important; font-weight: 700; }
+.flow .generate-button:disabled { opacity: 1 !important; cursor: pointer; }
+.flow-step.nudge::before { animation: railNudge .6s ease 2; }
+@keyframes railNudge { 50% { transform: scale(1.5); } }
+
+.journal-v15 .date-jump { height: 40px; margin-bottom: 14px; align-items: center; overflow: hidden; }
+.journal-v15 .date-chips button { height: 34px; }
+.journal-v15 .book-nav { height: 44px; margin: 14px 0 26px; }

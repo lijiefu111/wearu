@@ -1,0 +1,17 @@
+/* WEARU v020 · picker sheet */
+.pick-sheet { position: relative; width: min(100%, 430px); height: 86dvh; overflow-y: auto; overscroll-behavior: contain; padding: 0 16px calc(20px + env(safe-area-inset-bottom)); border-radius: 22px 22px 0 0; background: var(--t-bg, #F6EFE6); animation: sheet .28s cubic-bezier(.2,.8,.2,1); }
+.pick-sheet.closing { animation: sheetOut .22s ease forwards; }
+@keyframes sheetOut { to { transform: translateY(100%); } }
+.pick-top { position: sticky; top: 0; z-index: 3; margin: 0 -16px 10px; padding: 8px 16px 10px; background: var(--t-bg, #F6EFE6); box-shadow: 0 6px 10px -10px rgba(0,0,0,.25); }
+.pick-bar { display: grid; grid-template-columns: auto 1fr auto; align-items: center; gap: 8px; margin: 4px 0 10px; }
+.pick-bar b { text-align: center; font-size: 15px; }
+.pick-cancel { min-height: 36px; padding: 0 6px; border: 0; background: none; color: #70685f; font: inherit; font-size: 14px; cursor: pointer; }
+.pick-done { min-height: 36px; padding: 0 14px; border: 0; border-radius: 999px; background: var(--t-accent, #C4644A); color: #fff; font: inherit; font-size: 13px; font-weight: 600; cursor: pointer; white-space: nowrap; }
+.pick-filter { margin: 0; }
+.pick-filter button { font-size: 12px; min-height: 34px; }
+.pick-sheet .pick-grid { margin-top: 0; }
+.pick-sheet .pick-card { transition: border-color .15s ease, background .15s ease, transform .12s ease; cursor: pointer; }
+.pick-sheet .pick-card:active { transform: scale(.98); }
+.pick-sheet .pick-card b { display: block; margin-top: 8px; font-size: 13px; }
+.pick-sheet .pick-card small { display: block; margin-top: 2px; font-size: 11px; color: #8b7a6a; }
+.pick-backdrop { align-items: flex-end; }

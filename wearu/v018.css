@@ -1,0 +1,10 @@
+/* WEARU v018 · inline try-on */
+.try-inline { display: grid; gap: 10px; }
+.try-inline .tryon-switch { margin: 0; }
+.tryon-result.inline { margin: 0; }
+.tryon-result.inline img { width: 100%; border-radius: 16px; display: block; background: var(--t-soft, #EDE5DA); }
+.tryon-result.inline .micro { margin: 8px 0 0; text-align: center; }
+.try-empty { display: grid; justify-items: center; gap: 6px; padding: 28px 12px; border: 1.5px dashed var(--t-line, #dfd2c3); border-radius: 16px; text-align: center; }
+.try-empty small { color: #70685f; font-size: 12px; }
+.try-hint { margin: 0; text-align: center; font-size: 11px; color: #8b7a6a; }
+.try-inline .live-frame { border-radius: 16px; }

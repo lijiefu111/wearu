@@ -1,0 +1,352 @@
+:root {
+  --sans: system-ui, -apple-system, "PingFang SC", "Microsoft YaHei", sans-serif;
+  --serif: var(--sans);
+  --v3-bg: #f7f7f5;
+  --v3-white: #fff;
+  --v3-ink: #181818;
+  --v3-muted: #595959;
+  --v3-coral: #252525;
+  --v3-line: #dededb;
+}
+
+body { background: #e7e7e4; }
+.app-shell, .v3 { background: var(--v3-bg); }
+.v3 { font-family: var(--sans); }
+.brand-top > b { color: var(--v3-ink); font: 850 15px var(--sans); letter-spacing: .15em; }
+.brand-top .circle-icon { min-width: 44px; min-height: 44px; }
+.weather-banner, .profile-insight, .diagnosis-overview { background: #ededea; }
+.app-nav { background: #fff; }
+.app-nav button { color: var(--v3-muted); font-size: 11px; }
+.app-nav button.active { color: var(--v3-ink); font-weight: 750; }
+.app-nav button.active svg { width: 36px; height: 24px; padding-inline: 7px; border-radius: 6px; background: #ececea; }
+.coral-button { background: var(--v3-ink); color: white; box-shadow: none; }
+.app-shell :is(button,select,input,[tabindex]):focus-visible,
+.modal-backdrop :is(button,select,input):focus-visible { outline: 2px solid #666; outline-offset: 3px; }
+
+.wardrobe-page .page-title { margin-bottom: 5px; }
+.closet-total { color: var(--v3-muted); margin: 0 0 14px; font-size: 13px; }
+.closet-cabinet {
+  display: grid;
+  grid-template: 122px 94px 94px / minmax(0, 1fr) minmax(0, 1fr);
+  gap: 5px;
+  padding: 8px 8px 10px;
+  border: 1px solid #191919;
+  border-radius: 10px;
+  background: #252525 url("oak.webp") center / 270px;
+  box-shadow: inset 0 0 0 2px #fafafa21, inset 0 -4px 0 #111, 0 10px 18px #1112;
+}
+.closet-door {
+  position: relative;
+  min-width: 0;
+  padding: 0;
+  display: block;
+  perspective: 650px;
+  text-align: left;
+  color: #141414;
+  border: 1px solid #0e0e0e;
+  border-radius: 4px;
+  background: radial-gradient(ellipse at 52% 76%, #73716d, #383736 55%, #181818 100%);
+  box-shadow: inset 0 0 15px #101010a0;
+}
+.closet-door-face {
+  position: absolute;
+  inset: 0;
+  display: block;
+  border-radius: 3px;
+  background: linear-gradient(125deg,#ffffff10,#0002), url("oak.webp") var(--grain, center) / 255px, #2b2b2b;
+  box-shadow: inset 0 0 0 1px #eee2, inset 0 -3px #0b0b0b60;
+  transform-origin: left center;
+  backface-visibility: visible;
+}
+.closet-outer, .closet-shoes { --grain: right center; }
+.closet-sticker {
+  position: absolute;
+  display: grid;
+  place-items: center;
+  width: 41px;
+  height: 37px;
+  top: 13px;
+  left: 13px;
+  transform: rotate(-8deg);
+  border-radius: 45% 39% 43% 39%;
+  background: #f0efea;
+  box-shadow: 0 2px 4px #0005;
+}
+.closet-outer .closet-sticker, .closet-bags .closet-sticker { transform: rotate(7deg); }
+.closet-sticker svg { width: 33px; height: 31px; fill: none; stroke: #2c2c2c; stroke-width: 3.1; stroke-linecap: round; stroke-linejoin: round; }
+.closet-label {
+  position: absolute;
+  bottom: 10px;
+  left: 11px;
+  min-height: 24px;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 3px 7px;
+  background: #f6f5f1;
+  color: #1c1c1c;
+  box-shadow: 0 2px 3px #0004;
+  font-size: 12px;
+}
+.closet-label span { color: #515151; font-size: 10px; white-space: nowrap; }
+.closet-handle {
+  position: absolute;
+  right: 10px;
+  top: 39%;
+  width: 4px;
+  height: 25%;
+  border-radius: 3px;
+  background: linear-gradient(90deg,#707070,#e6e6e6 55%,#909090);
+  box-shadow: 1px 2px 3px #0008;
+}
+.closet-door:hover .closet-door-face { box-shadow: inset 0 0 0 1px #eee9; }
+.cabinet-transition { position: fixed; inset: 0; z-index: 24; pointer-events: none; overflow: hidden; }
+.cabinet-transition .closet-door { position: absolute; transform-origin: center; }
+.closet-cta {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid var(--v3-line);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+}
+.closet-cta h2 { font-size: 22px; line-height: 1.2; margin: 0; }
+.closet-cta .dark-button { display: inline-flex; align-items: center; justify-content: center; gap: 10px; width: auto; padding-inline: 13px; min-height: 44px; white-space: nowrap; font-size: 13px; }
+
+.closet-tools { display: flex; gap: 12px; align-items: center; justify-content: space-between; margin: 0 0 14px; color: var(--v3-muted); font-size: 13px; }
+.closet-control { min-height: 44px; display: inline-flex; align-items: center; gap: 6px; padding: 0 12px; border-radius: 10px; border: 1px solid var(--v3-line); color: var(--v3-ink); background: #fff; font-size: 13px; }
+.closet-control svg { width: 17px; height: 17px; fill: none; stroke: currentColor; stroke-width: 1.7; }
+.browse-controls { display: grid; grid-template-columns: minmax(0,1fr) minmax(0,1fr); gap: 12px; margin: 0 0 20px; }
+.browse-controls select, .profile-sheet select {
+  appearance: none;
+  min-width: 0;
+  min-height: 44px;
+  padding: 8px 35px 8px 12px;
+  border: 1px solid var(--v3-line);
+  border-radius: 10px;
+  color: var(--v3-ink);
+  background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='m3 5 4 4 4-4' fill='none' stroke='%23252525' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+  font-size: 13px;
+}
+.category-browser .garment-grid, .pick-grid { gap: 14px 12px; }
+.category-browser .garment-tile, .pick-card { border: 1px solid var(--v3-line); border-radius: 11px; box-shadow: none; }
+.category-browser .garment-tile > img { background: #eeedeb; }
+.category-browser .wear-badge { font-size: 10px; background: #fff; color: #252525; border: 1px solid var(--v3-line); }
+.category-browser .garment-copy { padding: 11px 10px 13px; }
+.category-browser .garment-copy b { font-size: 13px; }
+.category-browser .garment-copy small { margin-top: 6px; font-size: 11px; line-height: 1.4; }
+.closet-empty { padding: 26px 8px; color: var(--v3-muted); text-align: center; }
+.scene-filter, .scene-pills { gap: 9px; }
+.scene-filter button, .scene-pills button, .feel-chip { min-height: 39px; }
+.feel-chips, .chip-group > div { gap: 9px; }
+.profile-sheet label { display: grid; grid-template-columns: minmax(80px, 1fr) minmax(0, 1.55fr); gap: 12px; margin: 12px 0; padding-inline-end: 10px; font-size: 13px; }
+.profile-sheet label input, .profile-sheet label select { width: 100%; min-width: 0; min-height: 44px; border-color: var(--v3-line); font-size: 13px; }
+.profile-sheet label input { padding-inline: 12px; }
+.profile-sheet .chip { min-height: 36px; font-size: 12px; border-color: var(--v3-line); }
+.profile-sheet .chip.selected, .feel-chip.on, .pick-card.selected { background: #ededeb; border-color: #444; box-shadow: none; color: #252525; }
+.avatar-upload { min-height: 44px; }
+:focus-visible { scroll-margin-block: 8px; }
+@media (prefers-reduced-motion: reduce) {
+  .app-page, .profile-sheet { animation: none; }
+}
+.closet-door::before {
+  content: "";
+  position: absolute;
+  inset: 9% 8%;
+  border: 1px solid #beb8ae30;
+  background: linear-gradient(to bottom, transparent 55%, #15151570 56%, #88837c50 59%, transparent 60%);
+  box-shadow: inset 0 5px 13px #07070770;
+  border-radius: 2px;
+  pointer-events: none;
+}
+.closet-door:focus-visible .closet-door-face { box-shadow: inset 0 0 0 2px #f2f2f2; }
+.profile-sheet label select { background-position: right 16px center; }
+.profile-sheet .add-lead { color: var(--v3-muted); }
+
+/* v004 — editorial outfit canvas and personal style archive */
+:root { --style-lilac: #e9e3f5; --style-ink: #242228; }
+.result-page, .diary-page { --v3-bg: #f1f0f2; background: var(--v3-bg); }
+.result-page .page-top { margin-bottom: 22px; }
+.result-meta .meta-chip { background: transparent; border: 1px solid #d7d4db; color: #55515b; }
+.look-slide { background: transparent; box-shadow: none; border-radius: 0; padding: 0; }
+.look-heading { padding: 12px 2px 16px; align-items: flex-end; }
+.look-heading h2 { font-size: 21px; letter-spacing: -.03em; line-height: 1.35; }
+.look-heading .micro { color: #69636f; font-size: 10px; letter-spacing: .12em; margin-bottom: 8px; }
+.look-heading > span { font: italic 22px Georgia,serif; color: #57515e; }
+.outfit-canvas { display: block; position: relative; width: 100%; aspect-ratio: 4 / 5; overflow: hidden; background: #fafafa; border-radius: 3px; isolation: isolate; }
+.outfit-piece { position: absolute; object-fit: contain; mix-blend-mode: multiply; }
+.piece-outer { left: 4%; top: 9%; width: 49%; height: 44%; transform: rotate(-6deg); z-index: 2; }
+.piece-top { right: 5%; top: 12%; width: 43%; height: 32%; transform: rotate(4deg); z-index: 3; }
+.piece-bottom { left: 20%; top: 44%; width: 47%; height: 47%; z-index: 1; }
+.piece-shoes { right: 3%; bottom: 5%; width: 31%; height: 23%; transform: rotate(-9deg); z-index: 3; }
+.piece-accessory { right: 6%; top: 44%; width: 24%; height: 22%; transform: rotate(8deg); z-index: 4; }
+.look-reason { color: #55515b; font-size: 13px; line-height: 1.8; margin: 18px 0 10px; }
+.look-items { gap: 8px; }
+.look-items span { background: transparent; border: 1px solid #d7d4db; padding: 6px 10px; color: #55515b; font-size: 11px; }
+.look-dots span.on { background: #77668f; }
+.result-page .ghost-button { background: transparent; border: 1px solid #aaa5b1; margin-top: 18px; }
+.result-page .coral-button { margin-top: 10px; }
+.archive-intro { margin: 12px 0 24px; }
+.archive-intro > span { font-size: 9px; letter-spacing: .18em; color: #69636f; }
+.archive-intro p { font-size: 14px; margin: 8px 0 0; color: #55515b; }
+.diary-view-switch { display: flex; gap: 24px; border-bottom: 1px solid #d6d3db; margin-bottom: 20px; }
+.diary-view-switch button { min-height: 46px; padding: 8px 0 12px; background: none; border: 0; border-bottom: 2px solid transparent; color: #77717e; font: inherit; font-size: 14px; }
+.diary-view-switch button[aria-pressed="true"] { color: #242228; border-bottom-color: #242228; font-weight: 650; }
+.diary-page .date-picker { margin-bottom: 20px; gap: 12px; }
+.diary-page .date-picker select { min-height: 44px; background: transparent; border: 1px solid #d6d3db; }
+.day-strip[hidden] { display: none; }
+.archive-count { display: flex; justify-content: space-between; gap: 10px; color: #69636f; font-size: 10px; margin: 4px 0 14px; }
+.outfit-gallery { display: grid; grid-template-columns: repeat(2,minmax(0,1fr)); gap: 24px 12px; }
+.outfit-cover { min-width: 0; border: 0; padding: 0; background: none; text-align: left; color: #242228; font: inherit; }
+.outfit-cover-art { display: block; position: relative; }
+.outfit-cover .outfit-canvas { aspect-ratio: 3 / 4; }
+.cover-date { position: absolute; left: 9px; top: 9px; font: 9px monospace; color: #55515b; }
+.cover-photo { position: absolute; bottom: 8px; left: 8px; padding: 4px 6px; background: var(--style-lilac); font-size: 8px; }
+.cover-title { display: block; margin: 10px 0 4px; font-size: 12px; line-height: 1.5; font-weight: 600; }
+.cover-caption { display: block; font-size: 10px; color: #69636f; line-height: 1.5; }
+.diary-entry { padding: 0; background: transparent; box-shadow: none; border-radius: 0; }
+.diary-entry .entry-date { margin: 8px 0 16px; }
+.diary-entry > h2 { margin-top: 20px; }
+.diary-entry .feel-block { padding-top: 18px; border-top: 1px solid #d6d3db; margin-top: 20px; }
+.diary-page .feel-chip.on { background: var(--style-lilac); border-color: #9e8db6; }
+.diary-page .profile-insight { margin-top: 30px; background: #e8e5ed; box-shadow: none; }
+.outfit-cover:hover .outfit-canvas { box-shadow: inset 0 0 0 1px #a398b3; }
+
+/* v005: photographic cabinet, six registered surfaces, in-place hinged opening */
+.wardrobe-page { background: #e4e1dc; }
+.wardrobe-page .weather-banner { background: #d9d6d140; border: 1px solid #c9c5be; }
+.wardrobe-page .page-title { margin-top: 24px; letter-spacing: -.04em; font-size: 27px; }
+.closet-total { font-size: 12px; letter-spacing: .06em; margin-bottom: 16px; }
+.closet-cabinet { display: block; position: relative; isolation: isolate; aspect-ratio:1086 / 1448; width:100%; padding:0; border:0; border-radius:2px; box-shadow:none; background:url('../wardrobe_directions_v001/direction_a.png') center / 100% 100% no-repeat; }
+.closet-door { position:absolute; display:block; padding:0; border:0; border-radius:0; background:none; box-shadow:none; perspective:900px; overflow:visible; cursor:pointer; }
+.closet-door::before { display:none; }
+.closet-door-face { position:absolute; inset:0; display:block; border-radius:0; box-shadow:none; background-image:url('../wardrobe_directions_v001/direction_a.png'); background-size:var(--texture-size); background-position:var(--texture-position); transform-origin:var(--hinge) center; backface-visibility:hidden; }
+.closet-door:hover .closet-door-face { box-shadow:inset 0 0 0 1px #f7ebd757; }
+.closet-door:focus-visible { outline:2px solid #1b1917; outline-offset:3px; z-index:3; }
+.closet-door:focus-visible .closet-door-face { box-shadow:inset 0 0 0 2px #f7ebd7; }
+.closet-label { position:absolute; left:var(--label-x); top:var(--label-y); bottom:auto; transform:translate(-50%,-50%); min-height:0; padding:0; display:flex; flex-direction:column; gap:2px; background:none; box-shadow:none; font-size:clamp(10px,2.8vw,13px); line-height:1.1; color:#332b24; white-space:nowrap; }
+.closet-label b { font-weight:600; letter-spacing:.09em; }
+.closet-label span { font-size:8px; color:#6c6053; }
+.cabinet-interior { position:absolute; inset:0; overflow:hidden; background:linear-gradient(90deg,#251b13,#64503a 18%,#51402e 82%,#241b13); box-shadow:inset 0 8px 15px #0d080bc9,inset 0 -4px 8px #1e140e; }
+.cabinet-interior::before { content:''; position:absolute; left:8%; right:8%; top:13%; height:2px; background:#b2a08a; box-shadow:0 3px 4px #120d09; }
+.cabinet-interior span { position:absolute; inset:15% 10% 14%; border-bottom:5px solid #836a50; box-shadow:0 4px 7px #18100b; }
+.closet-cta { margin-top:20px; padding-top:20px; border-color:#c0bab2; padding-bottom:10px; }
+.closet-cta h2 { font-size:22px; letter-spacing:-.03em; }
+.closet-cta .dark-button { border-radius:4px; padding:14px 18px; }
+@media (prefers-reduced-motion: reduce) { .closet-door-face { transition:none; } }
+/* v006 · WEARU brand system supplied by the user */
+:root { --v3-bg:#F6EFE6; --v3-white:#fffaf4; --v3-ink:#2E2C2A; --v3-muted:#70685f; --v3-coral:#a64d36; --v3-line:#dfd2c3; --style-lilac:#e3e8dc; --style-ink:#2E2C2A; }
+body { background:#EDE5DA; }
+.app-shell,.v3,.app-page,.wardrobe-page,.result-page,.diary-page { background:#F6EFE6; --v3-bg:#F6EFE6; }
+.brand-lockup { display:flex; gap:10px; align-items:center; }
+.brand-lockup svg { width:34px; height:34px; }
+.brand-lockup b { font:850 22px var(--sans); letter-spacing:-.055em; color:#2E2C2A; }
+.brand-top { height:44px; }
+.app-nav { background:#fffaf4f5; border-top:1px solid #dfd2c3; }
+.app-nav button { color:#70685f; }
+.app-nav button.active { color:#a64d36; }
+.app-nav button.active svg { background:#efddd1; }
+.weather-banner { background:#EDE5DA; box-shadow:none; border:1px solid #dfd2c3; }
+.coral-button,.dark-button { background:#2E2C2A; color:#fffaf4; box-shadow:none; }
+.coral-button:hover,.dark-button:hover { background:#47413b; }
+.ghost-button { color:#a64d36; border-color:#C4644A; }
+.wardrobe-page .page-title { font-size:26px; letter-spacing:-.035em; margin:26px 0 7px; }
+.wardrobe-subtitle { font-size:12px; line-height:1.6; color:#70685f; margin:0; }
+/* Separate layout cells keep artwork, labels and hit areas apart. */
+.category-collage { width:100%; display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:26px 24px; margin:24px 0 12px; padding:0 4px; }
+.category-object { position:relative; min-width:0; width:100%; padding:0; border:0; background:none; color:#2E2C2A; text-align:center; cursor:pointer; display:flex; flex-direction:column; align-items:center; }
+.category-art { position:relative; display:block; width:100%; height:clamp(112px,34vw,150px); flex:none; background:none; overflow:hidden; }
+.category-art svg { position:absolute; inset:10px; width:calc(100% - 20px); height:calc(100% - 20px); display:block; overflow:hidden; transition:transform 180ms ease; }
+.category-name { display:block; font-size:12px; font-weight:550; letter-spacing:.04em; line-height:20px; min-height:28px; padding:4px 8px; margin-top:10px; }
+.category-name > span { color:#a64d36; font-size:11px; }
+.category-object:hover .category-art svg { transform:translateY(-2px); }
+.category-object:focus-visible { outline:2px solid #a64d36; outline-offset:4px; border-radius:12px; }
+/* A small offset inside the cell gives rhythm without moving the hit area. */
+.object-outer .category-art svg,.object-bags .category-art svg { top:16px; height:calc(100% - 26px); }
+@media(max-width:360px) { .category-collage { gap:22px 16px; } }
+.closet-cta { margin-top:20px; border-color:#dfd2c3; padding:20px 0 10px; }
+.closet-cta .micro { font-size:9px; letter-spacing:.15em; color:#8b654c; margin:0 0 8px; }
+.closet-cta h2 { font-size:23px; }
+.closet-cta .dark-button { border-radius:24px; padding-inline:19px; }
+.category-browser .garment-tile { background:#fffaf4; border-color:#e6d9cb; }
+.category-browser .garment-tile > img { background:#EDE5DA; }
+.category-browser .wear-badge { background:#fffaf4; border-color:#dfd2c3; color:#605449; }
+.category-browser .garment-copy small { color:#70685f; }
+.closet-control,.browse-controls select,.profile-sheet select { background-color:#fffaf4; border-color:#dfd2c3; }
+.scene-pills button.selected,.chip.selected,.feel-chip.on,.pick-card.selected { background:#eee0d2; border-color:#C4644A; color:#85402e; }
+.look-dots span.on { background:#C4644A; }
+.look-items span,.result-meta .meta-chip { border-color:#dfd2c3; color:#70685f; }
+.outfit-canvas { background:#fffaf4; }
+.diary-view-switch { border-color:#dfd2c3; }
+.diary-view-switch button[aria-pressed="true"] { color:#a64d36; border-bottom-color:#C4644A; }
+.diary-page .profile-insight,.profile-insight,.diagnosis-overview { background:#EDE5DA; }
+.diary-page .feel-chip.on { background:#e3e8dc; border-color:#97A789; color:#394a30; }
+.companion-panel { display:grid; grid-template-columns:110px minmax(0,1fr); gap:12px; align-items:center; margin:20px 0; padding:16px 12px; background:#EDE5DA; border-radius:20px; }
+.u-display { width:110px; aspect-ratio:1; }
+.u-display img { width:100%; height:100%; object-fit:contain; transition:filter 220ms ease; }
+.u-sage img { filter:sepia(.7) saturate(.65) hue-rotate(30deg) brightness(.77); }
+.u-clay img { filter:sepia(1) saturate(2.4) hue-rotate(330deg) brightness(.78); }
+.u-charcoal img { filter:grayscale(1) brightness(.25); }
+.companion-copy .micro { font-size:8px; letter-spacing:.12em; color:#8b654c; }
+.companion-copy h3 { font-size:15px; margin:6px 0; }
+.companion-copy p { font-size:11px; color:#70685f; line-height:1.6; margin:0 0 8px; }
+.u-swatches { display:flex; gap:2px; }
+.u-swatches button { width:36px; height:36px; border:0; background:transparent; border-radius:50%; padding:6px; display:grid; place-items:center; }
+.u-swatches button::before { content:''; width:22px; height:22px; background:var(--swatch); border:1px solid #0002; border-radius:50%; }
+.u-swatches button[aria-pressed="true"] { outline:1px solid #2E2C2A; outline-offset:-3px; }
+.profile-sheet { background:#F6EFE6; }
+.profile-sheet .chip.selected { border-color:#C4644A; background:#eee0d2; color:#85402e; }
+@media(prefers-reduced-motion:reduce) { .category-art svg,.u-display img { transition:none; } }
+
+/* Actual artwork bounds prevent neighbouring atlas objects bleeding into a category. */
+.category-art { background:none; }
+
+
+/* v009 — detail polish after full walkthrough */
+/* Category art: one clean cut-out per category, no shared atlas. */
+.category-art img { position:absolute; inset:10px; width:calc(100% - 20px); height:calc(100% - 20px); object-fit:contain; transition:transform 180ms ease; }
+.category-object:hover .category-art img { transform:translateY(-2px); }
+.object-outer .category-art img,.object-bags .category-art img { top:16px; height:calc(100% - 26px); }
+/* Every select shares one custom arrow, 14px from the edge. */
+.date-picker select, .diary-page .date-picker select, .category-select select, .import-sheet select {
+  appearance:none; -webkit-appearance:none; min-height:44px; padding:8px 36px 8px 14px; border:1px solid #dfd2c3; border-radius:10px; color:#2E2C2A; font-size:13px;
+  background:#fffaf4 url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 14 14'%3E%3Cpath d='m3 5 4 4 4-4' fill='none' stroke='%23252525' stroke-width='1.4' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat right 14px center;
+}
+/* Line icons replace emoji in buttons. */
+.rec-tryon svg, .rec-find svg, .feed-tryon svg, .feed-items button svg { width:14px; height:14px; fill:none; stroke:currentColor; stroke-width:1.6; stroke-linecap:round; stroke-linejoin:round; vertical-align:-2px; margin-right:4px; }
+.weather-icon svg { width:26px; height:26px; fill:none; stroke:#2E2C2A; stroke-width:1.5; stroke-linejoin:round; }
+.weather-refresh { width:auto !important; padding:0 10px; font-size:11px; color:#70685f; }
+.feed-avatar { display:grid; place-items:center; background:#2E2C2A; color:#F6EFE6; font-size:13px; font-weight:600; }
+/* Archive covers are shorter: pull shoes inward so they are not clipped. */
+.outfit-cover .piece-shoes { bottom:8%; right:6%; width:28%; }
+
+/* v010 — male / female lines */
+.brand-top .top-actions { display:flex; align-items:center; gap:10px; }
+.gender-toggle { display:inline-flex; padding:3px; border:1px solid #dfd2c3; border-radius:999px; background:#fffaf4; }
+.gender-toggle button { min-width:36px; min-height:32px; padding:0 10px; border:0; border-radius:999px; background:transparent; color:#70685f; font:inherit; font-size:13px; cursor:pointer; }
+.gender-toggle button[aria-pressed="true"] { background:#2E2C2A; color:#F6EFE6; font-weight:600; }
+.category-art.photo img { object-fit:contain; filter:drop-shadow(0 6px 10px rgba(46,44,42,.12)); }
+.category-art.empty-art { display:grid; place-items:center; }
+.category-art.empty-art span { width:62%; aspect-ratio:1; display:grid; place-items:center; border:1.5px dashed #c9b9a8; border-radius:16px; color:#8b7a6a; font-size:12px; letter-spacing:.08em; }
+.closet-empty { display:grid; gap:8px; justify-items:center; padding:36px 16px; }
+.closet-empty b { color:#2E2C2A; font-size:15px; }
+.closet-empty small { max-width:280px; color:#70685f; font-size:12px; line-height:1.6; }
+.closet-empty .ghost-button { width:auto; margin-top:8px; padding:0 18px; }
+.pending-card { margin-top:28px; padding:24px 20px; border-radius:20px; background:#EDE5DA; display:grid; gap:10px; }
+.pending-card .micro { font-size:9px; letter-spacing:.15em; color:#8b654c; margin:0; }
+.pending-card h2 { margin:0; font-size:20px; }
+.pending-card p:not(.micro) { margin:0; color:#5f574f; font-size:13px; line-height:1.7; }
+.pending-card .dark-button { margin-top:8px; }
+.dup-warning { margin:16px 0 22px; padding:14px 16px; border:1px solid #e4c9b9; border-radius:14px; background:#fbf1ea; }
+.dup-warning .micro { margin:0 0 6px; font-size:9px; letter-spacing:.14em; color:#a64d36; }
+.dup-warning b { display:block; font-size:14px; margin-bottom:4px; }
+.dup-warning small { color:#70685f; font-size:12px; line-height:1.6; }
+.tryon-sheet .tryon-wear { margin-top:14px; }
+.tryon-sheet .tryon-close { display:block; width:100%; min-height:44px; margin-top:6px; border:0; background:none; color:#70685f; font:inherit; font-size:13px; cursor:pointer; }
+.profile-sheet .gender-row { display:flex; align-items:center; justify-content:space-between; gap:12px; margin:16px 0 4px; padding:12px 14px; border:1px solid #dfd2c3; border-radius:14px; background:#fffaf4; }
+.profile-sheet .gender-row b { display:block; font-size:13px; }
+.profile-sheet .gender-row small { display:block; margin-top:3px; color:#70685f; font-size:11px; }
+.category-name .gap-tag { margin-left:6px; padding:1px 7px; border-radius:999px; background:#fbe9df; color:#a64d36; font-size:10px; font-style:normal; font-weight:600; letter-spacing:.04em; vertical-align:1px; }
+.rec-img.product { background:#EDE5DA; }
+.rec-img.product img { object-fit:contain; padding:14px; box-sizing:border-box; }
