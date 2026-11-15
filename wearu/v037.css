@@ -1,0 +1,3 @@
+/* WEARU v037: swap the demo data without a visible jump */
+html.switching .app-shell { opacity: .7; transition: opacity .15s ease; }
+html.resuming .app-shell { animation: none !important; }
