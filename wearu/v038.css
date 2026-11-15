@@ -1,0 +1,13 @@
+/* WEARU v038 · gated 懂你 */
+.plus-gated { min-height: auto !important; }
+.plus-gate { display: grid; justify-items: center; gap: 8px; margin: 96px 0 0; padding: 34px 22px 28px; border-radius: 22px 22px 34px 22px; text-align: center;
+  background: var(--felt), var(--felt-cream, #EFE5D3); position: relative; }
+.plus-gate::before { content: ""; position: absolute; inset: 7px; border: 1.5px dashed var(--stitch-dark, rgba(43,42,40,.28)); border-radius: 16px 16px 28px 16px; pointer-events: none; }
+.plus-gate .u-mark { margin-top: -86px; }
+.plus-gate h2 { margin: 6px 0 0; font-size: 19px; }
+.plus-gate p { margin: 0 0 10px; color: #6f645a; font-size: 13px; }
+.plus-gate .coral-button { width: auto; padding: 0 30px; margin: 0; position: relative; }
+@media (min-width: 600px) { .plus-gated { min-height: calc(100dvh - 48px) !important; box-sizing: border-box; } }
+@media (max-width: 599px) { .plus-gated { min-height: 100dvh !important; box-sizing: border-box; } }
+/* desktop frame: inner wrappers were sized to the full window, adding 48px of empty scroll on every page */
+@media (min-width: 600px) { .app-shell #screen, .app-shell .v3, .app-shell .app-page { min-height: calc(100dvh - 48px) !important; box-sizing: border-box; } }
