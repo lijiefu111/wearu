@@ -1,0 +1,17 @@
+/* WEARU v032 · 找同款 = put it in your wardrobe */
+.fs-v32 h2 { margin: 4px 0 12px; }
+.fs-fit { margin: 0 0 16px; padding: 14px; border-radius: 16px; background: var(--t-card, #fff); border: 1.5px dashed var(--t-line, #E6DED1); }
+.fs-fit.good { border-color: rgba(74,107,62,.35); }
+.fs-fit.twin { border-color: rgba(61,106,140,.35); }
+.fs-try { position: relative; margin: 6px auto 10px; border-radius: 14px; overflow: hidden; background: #e4e3e6; aspect-ratio: 3/4; max-height: 420px; }
+.fs-try img { width: 100%; height: 100%; object-fit: contain; object-position: center bottom; }
+.fs-try .lm-tag { position: absolute; left: 10px; bottom: 10px; }
+.fs-with { display: flex; flex-wrap: wrap; align-items: center; gap: 6px; }
+.fs-with span { position: relative; width: 40px; height: 40px; border-radius: 10px; background: var(--t-soft, #F0EAE0); display: grid; place-items: center; overflow: hidden; }
+.fs-with span img { width: 34px; height: 34px; object-fit: contain; }
+.fs-with .fs-new { outline: 1.5px solid #C4643F; overflow: visible; }
+.fs-with .fs-new img { width: 40px; height: 40px; object-fit: cover; border-radius: 10px; }
+.fs-with .fs-new i { position: absolute; top: -7px; right: -7px; padding: 0 4px; border-radius: 6px; background: #C4643F; color: #fff; font-size: 9px; line-height: 14px; font-style: normal; font-weight: 600; }
+.fs-with b { color: #C4643F; font-weight: 400; }
+.fs-with small { flex-basis: 100%; font-size: 11px; color: #77716b; }
+.fs-sub { margin: 4px 2px 8px; font-size: 12px; color: #77716b; }
