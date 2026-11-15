@@ -1,0 +1,8 @@
+/* WEARU v027 · one background colour everywhere around the phone frame */
+html, html[data-theme] body { background: var(--t-body, #ECEBE8) !important; }
+@media (min-width: 600px) {
+  /* drop the soft halo: the fixed top/bottom caps can't match a shadow, which showed up as a lighter band */
+  .app-shell { box-shadow: 0 0 0 10px #2e2c2a !important; }
+}
+/* top bar: solid page colour (the translucent blur picked up grey smudges from content scrolling under it) */
+.app-page > .brand-top, .app-page > .page-top.compact { background: var(--t-bg, #FAFAF8) !important; backdrop-filter: none; -webkit-backdrop-filter: none; }
