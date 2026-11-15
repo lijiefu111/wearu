@@ -2,7 +2,7 @@
 
 > AI 私人穿搭伙伴（移动端原型）——围绕你**真实拥有的衣橱**，帮你从「衣柜里有」走到「今天穿了、感觉不错」。
 
-**在线体验(手机打开更佳)**：https://lijiefu111.github.io/Baida/ （WEARU demo；旧版百搭原型：/legacy.html）
+**在线体验(手机打开更佳)**：https://lijiefu111.github.io/wearu/ （WEARU demo；旧版百搭原型：/legacy.html）
 
 ---
 

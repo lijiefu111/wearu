@@ -289,4 +289,4 @@
 - **其他**：U 伙伴贯穿各页；实时定位天气与动态图标；配色默认「云白」，可在个人档案切换四套对比；实时试穿为镜头预览，换装模型（Decart Lucy VTON）待接入。
 
 ### v9 线上
-- `https://lijiefu111.github.io/Baida/` → 自动进入 `wearu/`
+- `https://lijiefu111.github.io/wearu/` → 自动进入 `wearu/`
