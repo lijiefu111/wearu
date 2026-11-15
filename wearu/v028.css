@@ -1,0 +1,21 @@
+/* WEARU v028 · new brand */
+:root, html[data-theme=cloud] { --t-accent: #C4643F; --t-accent-ink: #A24E2F; --brand-ink: #2B2A28; --brand-cream: #EFE5D3; --brand-clay: #C4643F; }
+.brand-lockup.v28 { gap: 9px; }
+.brand-lockup.v28 .wearu-mark { width: 38px; height: 37px; }
+.brand-lockup.v28 b { font: 500 23px/1 "Jost", "Futura", "Avenir Next", sans-serif; letter-spacing: .08em; color: var(--brand-ink); }
+
+/* felt figures: no colour filters, a touch of shadow */
+.ip-mark img { filter: drop-shadow(0 3px 5px rgba(43,42,40,.18)) !important; }
+.hero-u.ip-mark { right: 66px; bottom: -6px; opacity: 1; transform: rotate(-4deg); }
+.hero-u.ip-mark img { filter: drop-shadow(0 6px 10px rgba(0,0,0,.35)) !important; }
+
+/* companion picker */
+.ip-panel .u-display img { filter: drop-shadow(0 6px 10px rgba(43,42,40,.18)); }
+.ip-pick { display: flex; gap: 6px; margin-top: 10px; }
+.ip-pick button { width: 44px; height: 44px; padding: 3px; border: 1px solid transparent; border-radius: 12px; background: rgba(255,255,255,.6); cursor: pointer; }
+.ip-pick button img { width: 100%; height: 100%; object-fit: contain; }
+.ip-pick button[aria-pressed="true"] { border-color: var(--brand-ink); background: #fff; }
+/* home banner: bigger figure on a soft cream disc so dark figures still read on the dark card */
+.hero-u.ip-mark { width: 96px !important; height: 96px !important; right: 62px; bottom: -14px; }
+.hero-u.ip-mark::before { content: ""; position: absolute; left: 50%; bottom: 10px; width: 84px; height: 84px; transform: translateX(-50%); border-radius: 50%; background: radial-gradient(circle, rgba(239,229,211,.5), rgba(239,229,211,0) 70%); }
+.hero-u.ip-mark img { position: relative; }
