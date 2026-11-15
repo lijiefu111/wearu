@@ -1,0 +1,64 @@
+/* WEARU v029 · felt & stitch — the companions' materials become the UI's materials */
+:root, html[data-theme=cloud] {
+  --t-bg: #F7F3EC; --t-card: #FFFDF9; --t-soft: #F0EAE0; --t-line: #E6DED1; --t-body: #ECE6DC;
+  --felt-ink: #2B2A28; --felt-cream: #EFE5D3; --felt-clay: #C4643F; --felt-navy: #3B4256;
+  --stitch-light: rgba(244,239,231,.55); --stitch-dark: rgba(43,42,40,.28);
+  --felt: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 .09 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+}
+html[data-theme] .app-shell, html[data-theme] .app-page { background-color: var(--t-bg) !important; }
+
+/* ---------- 1. home: cream felt card, the companion stands on it ---------- */
+html[data-theme] body .app-shell .today-hero.today-hero { overflow: visible !important; margin-top: 30px !important; padding: 22px 132px 20px 22px !important; min-height: 116px; margin-bottom: 30px !important;
+  background: var(--felt), var(--felt-cream) !important; color: var(--felt-ink) !important; border-radius: 22px 22px 34px 22px !important;
+  box-shadow: 0 10px 22px rgba(43,42,40,.08), inset 0 0 0 1px rgba(43,42,40,.05) !important; }
+.today-hero::before { content: ""; position: absolute; inset: 7px; border: 1.5px dashed var(--stitch-dark); border-radius: 16px 16px 28px 16px; pointer-events: none; }
+.today-hero .today-copy small { color: #7d6e5e !important; }
+.today-hero .today-copy b { color: var(--felt-ink) !important; }
+.today-hero .today-copy em { color: #5d5248 !important; }
+.today-hero .today-go { display: none !important; }
+.today-hero .today-copy::after { content: "开始搭配 →"; justify-self: start; margin-top: 6px; padding: 7px 14px; border-radius: 999px;
+  background: var(--felt), var(--felt-clay); color: #fff; font-size: 12px; font-weight: 600; letter-spacing: .04em;
+  outline: 1.2px dashed rgba(255,255,255,.55); outline-offset: -4px; box-shadow: 0 4px 10px rgba(196,100,63,.25); }
+.hero-u.ip-mark { width: 128px !important; height: 128px !important; right: 6px !important; bottom: 4px !important; transform: none !important; }
+.hero-u.ip-mark::before { display: none; }
+.hero-u.ip-mark img { filter: drop-shadow(0 8px 8px rgba(43,42,40,.18)) !important; }
+.today-hero:hover .hero-u.ip-mark img { animation: ip-sway .9s ease-in-out; transform-origin: 50% 100%; }
+
+/* ---------- 2. section heads get a short stitched underline ---------- */
+.section-head h2, .page-title { position: relative; }
+.section-head h2::after { content: ""; display: block; width: 28px; margin-top: 6px; border-top: 2px dashed var(--felt-clay); opacity: .7; }
+
+/* ---------- 3. 「U 说」: a stitched felt tag with the companion beside it ---------- */
+.u-says { position: relative; align-items: flex-end !important; padding: 14px 14px 14px 12px !important; border-radius: 6px 16px 16px 16px !important;
+  background: var(--felt), var(--felt-cream) !important; }
+.u-says::before { content: ""; position: absolute; inset: 5px; border: 1.2px dashed var(--stitch-dark); border-radius: 3px 12px 12px 12px; pointer-events: none; }
+.u-says .u-mark { --u: 46px !important; width: 46px !important; height: 46px !important; margin: -22px 0 -6px -4px; }
+.u-says b { color: var(--felt-clay) !important; }
+
+/* ---------- 4. buttons: felt with an inner stitch ---------- */
+html[data-theme] body :is(.coral-button, .dark-button):not(#x) { background: var(--felt), var(--felt-ink) !important; outline: 1.2px dashed var(--stitch-light); outline-offset: -6px; }
+html[data-theme] body :is(.coral-button, .dark-button):not(#x):hover { background: var(--felt), #3a3835 !important; }
+
+/* ---------- 5. nav: the active tab is a small felt swatch (logo shape) ---------- */
+.app-nav button.active { color: var(--felt-ink) !important; }
+.app-nav button.active svg { background: var(--felt), var(--felt-cream) !important; border-radius: 4px 4px 12px 4px !important; outline: 1px dashed rgba(196,100,63,.7); outline-offset: -3px; color: var(--felt-ink); }
+
+/* ---------- 6. loading & empty states: the companion sways on a stitched ground line ---------- */
+.inline-loading .u-mark, .u-loading .u-mark, .try-empty .u-mark, .journal-page.empty .u-mark { position: relative; padding-bottom: 6px; }
+.inline-loading .u-mark::after, .u-loading .u-mark::after, .try-empty .u-mark::after, .journal-page.empty .u-mark::after {
+  content: ""; position: absolute; left: -20%; right: -20%; bottom: 2px; border-top: 1.5px dashed var(--stitch-dark); }
+.u-bounce img, .u-bounce-slow img { animation: ip-sway 1.6s ease-in-out infinite !important; transform-origin: 50% 100%; }
+.u-bounce, .u-bounce-slow { animation: none !important; }
+@keyframes ip-sway { 0%, 100% { transform: rotate(-4deg); } 50% { transform: rotate(4deg) translateY(-2px); } }
+
+/* ---------- 7. persona header (懂你) ---------- */
+.u-title .u-mark { --u: 76px !important; width: 76px !important; height: 76px !important; }
+
+/* ---------- 8. cards on cream: keep them white so clothes stay true-colour ---------- */
+.gp-card, .wi-styling, .look-slide, .flow-step .wardrobe-pick-btn { background-color: var(--t-card); }
+
+@media (prefers-reduced-motion: reduce) { .u-bounce img, .u-bounce-slow img, .today-hero:hover .hero-u.ip-mark img { animation: none !important; } }
+.inline-loading .u-mark { --u: 84px !important; width: 84px !important; height: 92px !important; }
+/* journal cover: the companion stands on the linen like a little doll */
+.jf-cover-u.ip-mark { width: 104px !important; height: 104px !important; right: 9% !important; bottom: 5% !important; transform: none !important; }
+.jf-cover-u.ip-mark img { filter: drop-shadow(0 8px 8px rgba(0,0,0,.28)) !important; }
