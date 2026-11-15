@@ -1,0 +1,14 @@
+/* WEARU v033 */
+/* every bottom sheet is the same width as the phone; on desktop it sits inside the frame */
+.modal-backdrop > section { width: min(100%, 430px) !important; box-sizing: border-box; }
+@media (min-width: 600px) {
+  .modal-backdrop { padding-bottom: 24px; }
+  .modal-backdrop > section { border-radius: 22px 22px 36px 36px !important; max-height: calc(100dvh - 72px) !important; }
+}
+
+/* wardrobe tiles: heat top-left, worn count bottom-right so it doesn't cover the garment */
+.garment-tile { position: relative; }
+.tile-heat { position: absolute; z-index: 2; top: 8px; left: 8px; width: 26px; height: 26px; display: grid; place-items: center; border-radius: 50%; font-size: 14px; }
+.tile-heat.hot { background: #FCE6D6; }
+.tile-heat.cold { background: #E3EEF6; }
+.category-browser .wear-badge.v33, .wear-badge.v33 { top: auto !important; left: auto !important; right: 8px; bottom: 8px; }
