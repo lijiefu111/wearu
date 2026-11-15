@@ -1,0 +1,14 @@
+/* WEARU v023 · the top bar (logo + 个人档案, or back + title) stays fixed while the page scrolls */
+.app-shell { overflow: clip; } /* hidden would stop sticky from working */
+html { scroll-padding-top: 84px; }
+.app-page > .brand-top, .app-page > .page-top.compact {
+  position: sticky; top: 0; z-index: 15;
+  height: auto; min-height: 44px; box-sizing: content-box;
+  margin: calc(-1 * max(18px, env(safe-area-inset-top))) -20px 6px;
+  padding: max(18px, env(safe-area-inset-top)) 20px 8px;
+  background: color-mix(in srgb, var(--t-bg, #FAFAF8) 94%, transparent);
+  backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px);
+}
+@media (min-width: 600px) {
+  .app-page > .brand-top, .app-page > .page-top.compact { top: 24px; }
+}
