@@ -1,0 +1,38 @@
+/* WEARU v031 */
+/* like on the card */
+.cj-like { margin-left: auto; display: inline-flex; align-items: center; gap: 3px; padding: 3px 8px; border-radius: 999px; font-style: normal; cursor: pointer; color: #70685f; transition: background .15s ease, color .15s ease; }
+.cj-like:hover { background: rgba(196,100,63,.08); }
+.cj-like.on, .cj-like-big.on { color: #C4643F; }
+.cj-like b, .cj-like-big b { font-weight: 400; display: inline-block; }
+.pop b { animation: lk-pop .32s ease; }
+@keyframes lk-pop { 0% { transform: scale(1); } 45% { transform: scale(1.45); } 100% { transform: scale(1); } }
+.cj-actions.one { grid-template-columns: 1fr !important; }
+.cj-like-big.on { border-color: #C4643F; background: rgba(196,100,63,.06); }
+
+/* fit badges on item tags */
+.cj-tag .fit { font-style: normal; font-size: 11px; padding: 1px 7px; border-radius: 999px; white-space: nowrap; }
+.fit.good { background: #E6EFE2; color: #4A6B3E; }
+.fit.twin { background: #E3EEF6; color: #3D6A8C; }
+.fit.weak { background: #F1ECE4; color: #8b7a6a; }
+
+/* fit analysis in 找同款 */
+.fit-box { margin: 12px 0 14px; padding: 14px; border-radius: 14px; background: var(--t-card, #fff); border: 1.5px dashed var(--t-line, #E6DED1); }
+.fit-box.good { border-color: rgba(74,107,62,.35); }
+.fit-box.twin { border-color: rgba(61,106,140,.35); }
+.fit-head { margin: 0 0 10px; font-weight: 700; font-size: 14px; }
+.fit-row { display: flex; align-items: center; gap: 6px; overflow-x: auto; }
+.fit-row figure { margin: 0; flex: 0 0 64px; display: grid; gap: 4px; }
+.fit-row img { width: 64px; height: 64px; object-fit: contain; border-radius: 10px; background: var(--t-soft, #F0EAE0); padding: 4px; box-sizing: border-box; }
+.fit-row figure.new img { outline: 2px solid #C4643F; outline-offset: -2px; }
+.fit-row figcaption { font-size: 10px; line-height: 1.3; color: #77716b; }
+.fit-eq { font-size: 18px; color: #C4643F; }
+.fit-note { margin: 10px 0 0; font-size: 12px; color: #77716b; }
+
+/* diagnosis: new + owned, one row under both images */
+.wi-mix { display: flex; align-items: center; gap: 6px; margin-top: 10px; padding: 8px 10px; border-radius: 12px; background: var(--t-soft, #F0EAE0); overflow-x: auto; }
+.wi-lbl { font-size: 11px; color: #77716b; white-space: nowrap; }
+.wi-th { position: relative; flex: none; width: 36px; height: 36px; border-radius: 9px; background: #fff; display: grid; place-items: center; }
+.wi-th img { width: 30px; height: 30px; object-fit: contain; }
+.wi-th.wi-new { outline: 1.5px solid #C4643F; }
+.wi-th.wi-new i { position: absolute; top: -6px; right: -6px; padding: 0 4px; border-radius: 6px; background: #C4643F; color: #fff; font-size: 9px; line-height: 14px; font-style: normal; font-weight: 600; }
+.wi-mix b { color: #C4643F; font-weight: 400; }
