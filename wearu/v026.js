@@ -7,6 +7,6 @@ const _whatIfPair26 = whatIfPair;
 whatIfPair = function (r, mo) {
   const html = _whatIfPair26(r, mo);
   const src = beforeShots[r.name]; if (!src) return html;
-  return html.replace(/<figure class="wi-then"><div class="wi-img">[\s\S]*?<\/div><figcaption>/, `<figure class="wi-then"><div class="wi-img wi-human"><img src="${src}" alt="那天的穿搭 · 数字人还原"<span class="wi-demo">效果演示</span></div><figcaption>`);
+  return html.replace(/<figure class="wi-then"><div class="wi-img">[\s\S]*?<\/div><figcaption>/, `<figure class="wi-then"><div class="wi-img wi-human"><img src="${src}" alt="那天的穿搭 · 数字人还原"><span class="wi-demo">效果演示</span></div><figcaption>`);
 };
 appRender();
