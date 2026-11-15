@@ -1,0 +1,10 @@
+/* WEARU v022 · desktop phone frame: tab bar always sits on the frame's bottom edge; theme fixed to 云白 */
+@media (min-width: 600px) {
+  /* bottom cap: paints the 24px below the frame and the rounded bottom corners, so nothing scrolls out under the tab bar */
+  .app-nav::before { content: ""; position: absolute; inset: 0; z-index: -1; border-radius: 0 0 36px 36px; pointer-events: none;
+    box-shadow: 0 0 0 10px #2e2c2a, 0 0 0 260px var(--t-body, #ECEBE8); clip-path: inset(0 -10px -270px -10px); }
+  /* top cap: same idea for the top edge while the page scrolls */
+  body::before { content: ""; position: fixed; z-index: 19; top: 24px; left: 50%; width: 430px; height: 40px; transform: translateX(-50%); border-radius: 36px 36px 0 0; pointer-events: none;
+    box-shadow: 0 0 0 10px #2e2c2a, 0 0 0 260px var(--t-body, #ECEBE8); clip-path: inset(-270px -10px 0 -10px); }
+  html[data-theme] body { background: var(--t-body, #ECEBE8) !important; }
+}
