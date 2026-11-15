@@ -1,0 +1,11 @@
+/* WEARU v036 */
+/* gender switch: no jump, no sheet re-animation on the way back */
+html.switching .app-shell, html.switching .modal-backdrop > section { opacity: .55; transition: opacity .18s ease; }
+html.resuming .modal-backdrop, html.resuming .modal-backdrop > section, html.resuming .app-page { animation: none !important; }
+
+/* Plus plans: discount */
+.pp-note { margin: 16px 2px -6px; font-size: 12px; color: #77716b; }
+.pp-orig { font-size: 12px; color: #a99d90; }
+.pp-off { margin-top: 2px; padding: 1px 7px; border-radius: 999px; background: #FCE6D6; color: #A24E2F; font-size: 11px; font-style: normal; font-weight: 600; white-space: nowrap; }
+.plus-plans button.on .pp-off { background: #C4643F; color: #fff; }
+.plus-plans button[data-plan="year"] .pp-off { background: #C4643F; color: #fff; }
