@@ -1,0 +1,49 @@
+/* WEARU v035 · WEARU Plus */
+/* profile */
+.pf-row { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 12px 0; padding-inline-end: 10px; font-size: 13px; }
+.plus-card { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 10px; margin: 6px 0 14px; padding: 14px 16px; border: 0; border-radius: 16px; text-align: left; cursor: pointer;
+  background: var(--felt), var(--felt-ink, #2B2A28); color: #F4EFE7; outline: 1.2px dashed rgba(244,239,231,.4); outline-offset: -6px; }
+.plus-card span { display: grid; gap: 3px; }
+.plus-card b { font-size: 15px; letter-spacing: .02em; }
+.plus-card small { font-size: 12px; color: #d8cdbd; }
+.plus-card i { font-style: normal; font-size: 13px; color: #F2B48F; white-space: nowrap; }
+.plus-card.free { background: var(--felt), var(--felt-cream, #EFE5D3); color: #2B2A28; outline-color: rgba(43,42,40,.25); }
+.plus-card.free small { color: #6f645a; }
+.plus-card.free i { color: #C4643F; }
+
+/* paywall */
+.plus-sheet { width: min(100%, 430px); max-height: 92dvh; overflow-y: auto; padding: 10px 18px calc(22px + env(safe-area-inset-bottom)); border-radius: 22px 22px 0 0; background: var(--t-bg, #F7F3EC); animation: sheet .28s ease; }
+.plus-hero { display: flex; align-items: center; gap: 12px; margin: 8px 0 14px; }
+.plus-kicker { margin: 0; font: 600 12px/1 "Jost", sans-serif; letter-spacing: .14em; color: #C4643F; text-transform: uppercase; }
+.plus-hero h2 { margin: 6px 0 4px; font-size: 21px; }
+.plus-state { margin: 0; font-size: 12px; color: #77716b; }
+.plus-table { border-radius: 14px; overflow: hidden; background: var(--t-card, #fff); border: 1px solid var(--t-line, #E6DED1); font-size: 12px; }
+.pt-head, .pt-row { display: grid; grid-template-columns: 1.15fr 1fr 1.2fr; gap: 6px; padding: 9px 12px; align-items: center; }
+.pt-head { background: var(--t-soft, #F0EAE0); font-weight: 700; color: #5d5248; }
+.pt-head span:last-child, .pt-row span:last-child { color: #A24E2F; font-weight: 600; }
+.pt-row + .pt-row { border-top: 1px solid var(--t-line, #E6DED1); }
+.pt-row span:first-child { font-weight: 600; color: #2B2A28; }
+.pt-row span:nth-child(2) { color: #8b7f73; }
+.plus-plans { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin: 16px 0 12px; }
+.plus-plans button { position: relative; display: grid; gap: 4px; justify-items: center; padding: 14px 6px 12px; border: 1.5px solid var(--t-line, #E6DED1); border-radius: 14px; background: var(--t-card, #fff); cursor: pointer; font: inherit; }
+.plus-plans button.on { border-color: #C4643F; background: #FFF6EF; }
+.plus-plans b { font-size: 13px; color: #5d5248; }
+.plus-plans strong { font-size: 20px; color: #2B2A28; }
+.plus-plans strong small { font-size: 11px; font-weight: 400; color: #77716b; }
+.plus-plans span { font-size: 11px; color: #77716b; }
+.plus-plans em { position: absolute; top: -9px; left: 50%; transform: translateX(-50%); padding: 1px 8px; border-radius: 999px; background: #C4643F; color: #fff; font-size: 10px; font-style: normal; white-space: nowrap; }
+.plus-cta { margin: 0 !important; }
+.plus-demo { display: block; margin: 12px auto 0; border: 0; background: none; color: #9c8b78; font-size: 12px; text-decoration: underline; cursor: pointer; }
+
+/* gates */
+.plus-chip { display: inline-block; margin-top: 8px; padding: 2px 10px; border-radius: 999px; background: #FCE6D6; color: #A24E2F; font-size: 11px; }
+.plus-lock { display: grid; gap: 10px; padding: 14px; border: 1.5px dashed rgba(196,100,63,.45); border-radius: 14px; background: #FFF8F2; }
+.plus-lock b { font-size: 14px; }
+.plus-lock .coral-button { margin: 0; }
+.plus-tag { margin-left: 6px; padding: 0 6px; border-radius: 6px; background: #C4643F; color: #fff; font-size: 10px; font-style: normal; line-height: 16px; }
+.plus-blur { position: relative; }
+.plus-blur > .persona { filter: blur(5px); pointer-events: none; user-select: none; }
+.plus-over { position: absolute; inset: 30% 6% auto; display: grid; gap: 6px; justify-items: center; padding: 18px; border-radius: 16px; background: rgba(255,253,249,.94); box-shadow: 0 10px 26px rgba(43,42,40,.12); text-align: center; }
+.plus-over small { color: #77716b; font-size: 12px; }
+.plus-over .coral-button { margin: 6px 0 0; width: auto; padding: 0 22px; }
+.cap-up { margin-left: 6px; padding: 1px 8px; border: 1px solid #C4643F; border-radius: 999px; background: none; color: #C4643F; font-size: 11px; cursor: pointer; }
